@@ -1,0 +1,32 @@
+<div class="mt-5">
+{{#each courses as |course|}}
+    <div class="p-3" id="course-{{course.id}}">
+        <h1>{{course.name}} - {{course.type}}</h1>
+
+        <div class="d-flex justify-content-between" style="width: 300px;">
+
+            <form action="/courses/{{course.id}}">
+                <button type="submit" class="btn btn-info">Check out</button>
+            </form>
+            
+            <form action="/courses/{{course.id}}/edit">
+                <button type="submit" class="btn btn-warning">Edit</button>
+            </form>
+            
+            <form action="/courses/{{course.id}}/delete" method="post">
+                <button type="submit" class="btn btn-danger">Delete</button>
+            </form>
+            
+            <button type="button" value="{{course.id}}" class="delete-btn btn btn-danger">
+                Delete Client
+            </button>
+
+        </div>
+    </div>
+{{/each}}
+</div>
+
+<a href="/courses/new" class="btn btn-primary mt-4">Create new course</a>
+
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="/js/delete.js"></script>

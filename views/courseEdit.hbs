@@ -1,0 +1,14 @@
+<h1 class="mt-5 mb-5">Edit course</h1>
+
+<form action="/courses/{{course.id}}/edit" method="POST">
+    <label for="name" class="form-label">Name:</label>
+    <input type="text" class="form-control" name="name" id="name" value="{{course.name}}">
+    
+    <label class="mt-4 mb-2">Type:</label>
+    <select name="type" class="form-select">
+        <option value="Full Time">Full Time</option>
+        <option value="Part Time">Part Time</option>
+    </select>
+
+    <button type="submit" class="btn btn-primary mt-5">Edit!</button>
+</form>
